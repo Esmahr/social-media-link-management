@@ -1,0 +1,24 @@
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content pb-5 ps-2 pe-2">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-4 pb-0 d-flex justify-content-center align-items-center">
+          <ul class="link-list">
+            <li class="link-item d-flex justify-content-between" *ngFor="let visit of visitHistory">
+              <div class="link-date me-3 d-flex">
+                <div class="date-day">{{ visit.timestamp | date:'dd' }}</div>
+                <div class="date-time">
+                  <div class="month">{{ visit.timestamp | date:'MMMM' }}</div>
+                  <div class="time">{{ visit.timestamp | date:'HH.mm' }}</div>
+                </div>
+              </div>
+              <a class="link-url pt-3" [href]="visit.url">http://localhost:4200{{ visit.url }}</a>
+             </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

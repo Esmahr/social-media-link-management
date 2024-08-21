@@ -1,0 +1,21 @@
+.btn {
+    border-radius: 39px;
+    height: 44px;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0 30px;
+    letter-spacing: 1px;
+    border: none;
+    background-color: #744bfc;
+    color: #EFF2FF;
+    box-shadow: 0 8px 24px 0 rgba(200, 215, 255, 0.251);
+}
+
+.btn:active,
+.btn:focus,
+.btn:hover {
+    background-color: #744bfc;
+    color: #EFF2FF;
+    border: 1px solid #744bfc;
+    box-shadow: 0 8px 24px 0 rgba(111, 144, 255, 0.2);
+}

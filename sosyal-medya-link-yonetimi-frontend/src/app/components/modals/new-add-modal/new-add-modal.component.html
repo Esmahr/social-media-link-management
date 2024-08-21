@@ -1,0 +1,33 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-0 pb-0 d-flex justify-content-center align-items-center">
+          <form (ngSubmit)="saveSocialMedia(form)" #form="ngForm">
+            <div class="mb-3">
+              <label for="link" class="form-label">Sosyal Medya Linki</label>
+              <input type="text" class="form-control" id="link" [(ngModel)]="socialMedia.link" name="link" required pattern="https?://.+" #link="ngModel">
+              <div *ngIf="link.invalid && (link.dirty || link.touched)" class="text-danger">
+                Geçerli bir URL giriniz.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Sosyal Medya Adı</label>
+              <input type="text" class="form-control" id="name" [(ngModel)]="socialMedia.name" name="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Açıklama</label>
+              <input type="text" class="form-control" id="description" [(ngModel)]="socialMedia.description" name="description" required>
+            </div>
+            <div class="modal-footer border-0 mb-2">
+              <button type="button" class="btn btn-cancel modal-footer-btn" data-bs-dismiss="modal">Vazgeç</button>
+              <button type="submit" class="btn btn-save modal-footer-btn" [disabled]="form.invalid" data-bs-dismiss="modal">Kaydet</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

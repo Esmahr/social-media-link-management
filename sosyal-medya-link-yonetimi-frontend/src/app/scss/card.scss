@@ -1,0 +1,41 @@
+.card-3d-wrap {
+    width: 440px;
+    max-width: 100%;
+    height: 400px;
+    transform-style: preserve-3d;
+    perspective: 800px;
+    margin-top: 40px;
+}
+
+.card-3d-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    transition: all 600ms ease-out;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    background-color: #744bfc47;
+    position: absolute;
+    border-radius: 6px;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.checkbox:checked~.card-3d-wrap .card-3d-wrapper {
+    transform: rotateY(180deg);
+}
+
+.center-wrap {
+    width: 100%;
+    padding: 35px;
+}

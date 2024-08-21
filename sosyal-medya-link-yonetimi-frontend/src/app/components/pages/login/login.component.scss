@@ -1,0 +1,73 @@
+@import url('../../../scss/button.scss');
+.main {
+    font-family: 'Poppins', sans-serif;
+    color: #744BFC;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    height: 90vh;
+    background-color: #EFF2FF;
+}
+
+h4 {
+    color: white;
+    font-weight: 600;
+}
+
+h6 span {
+    padding: 0 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.section {
+    padding-bottom: 10rem;
+}
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+.checkbox:checked+label,
+.checkbox:not(:checked)+label {
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 60px;
+    height: 16px;
+    border-radius: 8px;
+    padding: 0;
+    margin: 10px auto;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.checkbox:checked+label:before,
+.checkbox:not(:checked)+label:before {
+    position: absolute;
+    display: block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: #EFF2FF;
+    background-color: #744BFC;
+    content: url(../../../../assets/img/svg/location-arrow-solid\ \(1\).svg);
+    transform: rotate(270deg);
+    top: -10px;
+    left: -10px;
+    font-size: 24px;
+    transition: all 0.5s ease;
+}
+
+.checkbox:checked+label:before {
+    transform: translateX(44px) rotate(-360deg);
+}
+
+.alert{
+    z-index: 20;
+    margin: 1rem;
+}

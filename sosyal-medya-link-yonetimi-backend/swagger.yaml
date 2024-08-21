@@ -1,0 +1,352 @@
+openapi: 3.0.0
+info:
+  title: User and Social Media API
+  description: API for managing users and social media accounts
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000
+    description: Local server
+
+paths:
+  /users:
+    get:
+      summary: Get all users
+      responses:
+        '200':
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    name:
+                      type: string
+                    surname:
+                      type: string
+                    username:
+                      type: string
+                    email:
+                      type: string
+                    password:
+                      type: string
+    post:
+      summary: Create a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                surname:
+                  type: string
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '201':
+          description: User created
+        '500':
+          description: Error creating user
+
+  /users/{id}:
+    get:
+      summary: Get a user by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                  name:
+                    type: string
+                  surname:
+                    type: string
+                  username:
+                    type: string
+                  email:
+                    type: string
+                  password:
+                    type: string
+        '404':
+          description: User not found
+        '500':
+          description: Error retrieving user
+
+    put:
+      summary: Update a user by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                surname:
+                  type: string
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: User updated
+        '404':
+          description: User not found
+        '500':
+          description: Error updating user
+
+    delete:
+      summary: Delete a user by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: User deleted
+        '404':
+          description: User not found
+        '500':
+          description: Error deleting user
+
+  /socialmedia:
+    post:
+      summary: Create a new social media account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                link:
+                  type: string
+                description:
+                  type: string
+                userId:
+                  type: string
+      responses:
+        '201':
+          description: Social media account created
+        '500':
+          description: Error creating social media account
+
+  /socialmedia/{id}:
+    get:
+      summary: Get a social media account by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Social media account details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                  name:
+                    type: string
+                  link:
+                    type: string
+                  description:
+                    type: string
+                  userId:
+                    type: string
+        '404':
+          description: Social media account not found
+        '500':
+          description: Error retrieving social media account
+
+    put:
+      summary: Update a social media account by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                link:
+                  type: string
+                description:
+                  type: string
+                userId:
+                  type: string
+      responses:
+        '200':
+          description: Social media account updated
+        '404':
+          description: Social media account not found
+        '500':
+          description: Error updating social media account
+
+    delete:
+      summary: Delete a social media account by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Social media account deleted
+        '404':
+          description: Social media account not found
+        '500':
+          description: Error deleting social media account
+
+  /users/{userId}/socialmedia:
+    get:
+      summary: Get all social media accounts for a specific user
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of social media accounts for the user
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    name:
+                      type: string
+                    link:
+                      type: string
+                    description:
+                      type: string
+                    userId:
+                      type: string
+        '404':
+          description: No social media accounts found for this user
+        '500':
+          description: Error retrieving social media accounts
+
+  /login:
+    post:
+      summary: User login
+      description: Authenticate user with username and password.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - username
+                - password
+              properties:
+                username:
+                  type: string
+                  example: johndoe
+                password:
+                  type: string
+                  example: password123
+      responses:
+        '200':
+          description: User authenticated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                    example: 60d9c54f4f1c2c3a2c8e4d2a
+                  name:
+                    type: string
+                    example: John
+                  surname:
+                    type: string
+                    example: Doe
+                  username:
+                    type: string
+                    example: johndoe
+                  email:
+                    type: string
+                    example: johndoe@example.com
+        '401':
+          description: Incorrect password
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Incorrect password
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: User not found
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string

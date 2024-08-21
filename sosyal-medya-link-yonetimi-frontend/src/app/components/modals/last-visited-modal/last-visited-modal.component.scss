@@ -1,0 +1,67 @@
+.modal-content {
+    border-radius: 13px;
+}
+
+.btn-add {
+    background-color: #744BFC;
+    width: 75px;
+    height: 36px;
+    border-radius: 5rem;
+    font-size: 14px;
+    color: white;
+    margin-top: 7px;
+
+    &:focus,
+    &:active {
+        background-color: white;
+        color: #744BFC;
+        border: 2px solid #744BFC;
+        ;
+    }
+}
+
+.link-list {
+    padding-right: 2rem;
+    width: 100%;
+
+    @media screen and (max-width: 750px) {
+        padding-right: 0rem;
+        padding-left: 0rem;
+
+        .date-day {
+            font-size: 22px;
+            padding-top: 10px;
+        }
+    }
+
+    .link-item {
+        border-bottom: 1px solid #3333331f;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+
+        .date-day {
+            font-size: 32px;
+        }
+
+        .date-time {
+            padding-top: 10px;
+            margin-left: 5px;
+            padding-right: 10px;
+            border-right: 1px solid #33333326;
+        }
+
+        .time,
+        .month {
+            font-size: 10px;
+        }
+
+        .link-url {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+            margin-right: 20px;
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.navbar-toggler {
+    background-color: #744BFC;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.navbar-nav {
+    width: 55%;
+    font-size: 15px;
+    position: relative;
+    left: -1.8rem;
+}
+
+i {
+    background-color: #744BFC;
+    border-radius: 1.94px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+    .navbar-collapse {
+        margin-left: 4rem
+    }
+}

@@ -1,0 +1,33 @@
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-0 pb-0 d-flex justify-content-center align-items-center">
+          <form [formGroup]="form" (ngSubmit)="updateSocialMedia()">
+            <div class="mb-3">
+              <label for="link" class="form-label">Sosyal Medya Linki</label>
+              <input id="link" formControlName="link" type="text" class="form-control" placeholder="Link">
+              <div *ngIf="form.get('link')?.invalid && (form.get('link')?.dirty || form.get('link')?.touched)" class="text-danger">
+                Geçerli bir URL giriniz.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Sosyal Medya Adı</label>
+              <input id="name" formControlName="name" type="text" class="form-control" placeholder="Name"value="{{name | uppercaseSocialMediaName}}">
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Açıklama</label>
+              <input id="description" formControlName="description" type="text" class="form-control" placeholder="Description"value="{{desc | uppercaseSocialMediaName}}">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-cancel modal-footer-btn" (click)="deleteSocialMedia()" data-bs-dismiss="modal">Sil</button>
+          <button type="button" class="btn btn-save modal-footer-btn"[disabled]="form.invalid" (click)="updateSocialMedia()" data-bs-dismiss="modal">Kaydet</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

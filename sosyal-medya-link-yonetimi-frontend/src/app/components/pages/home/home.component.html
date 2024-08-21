@@ -1,0 +1,73 @@
+<app-navbar></app-navbar>
+<div class="main">
+    <div class="content">
+        <div class="d-flex mb-3 justify-content-between">
+            <div class="d-flex search-group">
+                <!--search input-->
+                <div class="d-flex search-box me-2">
+                    <input type="text" class="form-control" [(ngModel)]="searchValue" (input)="onSearch($event, dt)" placeholder="Search objects..." aria-label="Search" aria-describedby="search">
+                    <span class="input-group-text search-icon" id="search"><i class="fa fa-search text-white"></i></span>
+                </div>
+                <!--clear button-->
+                <button class="d-flex clear-button align-items-center justify-content-center bg-white" label="Clear" (click)="clear(dt)"><i class="fa fa-filter"></i></button>
+            </div>
+            <div class="d-flex">
+                <!--last visited url-->
+                <button type="button" class="btn lastVisited me-2" data-bs-toggle="modal" data-bs-target="#exampleModal1"><i class="fa-solid fa-eye text-white"></i></button>
+                <!--new add url-->
+                <button type="button" class="btn newAdd" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-regular fa-plus text-white"></i> <span class="new-text text-white">Yeni HesapEkle</span></button>
+            </div>
+        </div>
+        <p-table #dt [value]="userSocialMediaData"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" 
+            [paginator]="true" [rows]="9" [rowsPerPageOptions]="[2, 5, 9]" 
+            [tableStyle]="{ 'min-width': '1rem' }" styleClass="p-datatable-striped" 
+            [globalFilterFields]="['name', 'link']" borderRadius="16px"
+            [scrollable]="true" scrollHeight="560px">
+            <!--table header start-->
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="name" class="border-header">
+                        <div class="d-flex justify-content-between">
+                            <div>Sosyal Medya Link</div>
+                            <div><p-sortIcon field="name"></p-sortIcon></div>
+                        </div>
+                    </th>
+                    <th pSortableColumn="link" class="border-header detail-header">
+                        <div class="d-flex justify-content-between">
+                            <div>Sosyal Medya Adı</div>
+                            <div><p-sortIcon field="link"></p-sortIcon></div>
+                        </div>
+                    </th>
+                    <th class="detail-header">
+                        <div class="d-flex justify-content-between">
+                            <div>Code</div>
+                        </div>
+                    </th>
+                </tr>
+            </ng-template>
+            <!--table header end-->
+            <!--table body start-->
+            <ng-template pTemplate="body" let-socialmedia>
+                <tr (click)="openModal(socialmedia)" class="clickable-row" data-bs-toggle="modal"
+                    data-bs-target="#productModal">
+                    <td class="border-cell">{{ socialmedia.link }}</td>
+                    <td class="border-cell detail-cell">{{ socialmedia.name | uppercaseSocialMediaName }}</td>
+                    <td class="detail-cell">{{ socialmedia.description | uppercaseSocialMediaName}}</td>
+                </tr>
+            </ng-template>
+            <!--table body end-->
+            <!--error message start-->
+            <ng-template pTemplate="emptymessage">
+                <tr *ngIf="showEmptyMessage">
+                    <td colspan="3">Link bulunamadı.</td>
+                </tr>
+            </ng-template>
+            <!--error message end-->
+            <!-- home.component.html -->
+        </p-table>
+    </div>
+</div>
+<app-last-visited-modal></app-last-visited-modal>
+<app-new-add-modal (socialMediaAdded)="loadSocialMediaData()"></app-new-add-modal>
+<app-edit-modal link=" {{ selectedRow?.link }}" name="{{ selectedRow?.name }}" desc="{{ selectedRow?.description }}" (socialMediaDeleted)="loadSocialMediaData()" id="{{selectedRow?._id}}"></app-edit-modal>

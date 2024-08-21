@@ -1,0 +1,61 @@
+.modal-content {
+    border-radius: 13px;
+}
+
+.modal-footer-btn {
+    width: 82.76px;
+    height: 37.02px;
+    border-radius: 34px;
+    font-size: 13.42px;
+    font-weight: 500;
+    line-height: 20.13px;
+}
+
+.btn-save {
+    background-color: #744BFC;
+    color: #F5F7FF;
+
+    &:focus,
+    &:active {
+        background-color: #744BFC;
+        color: #F5F7FF;
+        border: none;
+    }
+}
+
+.btn-cancel {
+    background-color: #F5F7FF;
+    color: #744BFC;
+
+    &:focus,
+    &:active {
+        background-color: #F5F7FF;
+        color: #744BFC;
+        border: 2px solid #F5F7FF;
+    }
+}
+
+.form-label {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 19.5px;
+}
+
+form {
+    width: 100%;
+}
+
+.form-control {
+    border-radius: 5rem;
+    height: 40px;
+    font-size: 14px;
+
+    &:focus {
+        box-shadow: none;
+        border-color: #744BFC;
+    }
+}
+
+.form-control:-webkit-autofill {
+    box-shadow: 0 0 0 1000px white inset !important;
+}

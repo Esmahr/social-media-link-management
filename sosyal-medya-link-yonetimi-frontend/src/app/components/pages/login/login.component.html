@@ -1,0 +1,92 @@
+<div class="main d-flex align-items-center">
+    <div class="container">
+        <div class="col-12 text-center align-self-center pt-5">
+            <div class="section pt-3 pt-sm-2 text-center">
+                <h6 class="mb-0 pb-3"><span>Giriş Yap </span><span>Üye Ol</span></h6>
+                <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+                <label for="reg-log"></label>
+                <div class="card-3d-wrap mx-auto">
+                    <div class="card-3d-wrapper">
+                        <div class="card-front">
+                            <div class="center-wrap">
+                                <div class="section text-center">
+                                    <h4 class="mb-4 pb-3">Seni Tekrardan Görmek Harika</h4>
+                                    <form (submit)="onSubmitLogin()">
+                                        <div class="form-group position-relative">
+                                            <input type="text" name="username" class="form-style"
+                                                placeholder="Kullanıcı adı" id="username"
+                                                [(ngModel)]="loginData.username" autocomplete="off" />
+                                            <i class="input-icon fa-solid fa-at"></i>
+                                        </div>
+                                        <div class="form-group mt-2 position-relative">
+                                            <input type="password" name="pass" class="form-style" placeholder="Şifre"
+                                                id="pass" [(ngModel)]="loginData.password"
+                                                autocomplete="new-password" />
+                                            <i class="input-icon fa-solid fa-lock"></i>
+                                        </div>
+                                        <button type="submit" class="btn mt-4">GİRİŞ YAP</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="center-wrap">
+                                <div class="section text-center">
+                                    <h4 class="mb-4">Seni Aramızda Görmek Harika</h4>
+                                    <form (ngSubmit)="onSubmitRegister()">
+                                        <div class="d-flex">
+                                            <div class="form-group position-relative pe-1">
+                                                <input type="text" [(ngModel)]="userData.name" name="name"
+                                                    class="form-style" placeholder="Ad" id="name" autocomplete="off">
+                                                <i class="input-icon fa-solid fa-user"></i>
+                                            </div>
+                                            <div class="form-group position-relative ps-1">
+                                                <input type="text" [(ngModel)]="userData.surname" name="surname"
+                                                    class="form-style" placeholder="Soyad" id="surname"
+                                                    autocomplete="off">
+                                                <i class="input-icon fa-solid fa-user"></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group position-relative mt-2">
+                                            <input type="text" [(ngModel)]="userData.username" name="username"
+                                                class="form-style" placeholder="Kullanıcı adı" id="username1"
+                                                autocomplete="off">
+                                            <i class="input-icon fa-solid fa-at"></i>
+                                        </div>
+                                        <div class="form-group position-relative mt-2">
+                                            <input type="email" [(ngModel)]="userData.email" name="email"
+                                                class="form-style" placeholder="E-posta" id="email" autocomplete="off">
+                                            <i class="input-icon fa-solid fa-envelope"></i>
+                                        </div>
+                                        <div class="form-group position-relative mt-2">
+                                            <input type="password" [(ngModel)]="userData.password" name="pass"
+                                                class="form-style" placeholder="Şifre" id="pass1"
+                                                autocomplete="new-password">
+                                            <i class="input-icon fa-solid fa-lock"></i>
+                                        </div>
+                                        <button type="submit" class="btn mt-4">ÜYE OL</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Başarı ve hata mesajları için HTML -->
+<div class="alert alert-success fixed-top" role="alert" *ngIf="successMessageVisible">
+    Üye olma işleminiz başarılı, login sayfasına yönlendiriliyorsunuz.
+  </div>
+  <div class="alert alert-warning fixed-top" role="alert" *ngIf="errorMessageVisible">
+    Aynı kullanıcı adı veya e-posta ile kayıtlı kullanıcı bulunmaktadır. Lütfen tekrar deneyiniz.
+  </div>
+
+
+  <!-- Başarı ve hata mesajları için HTML -->
+
+  <div class="alert alert-warning fixed-top" role="alert" *ngIf="errorMessageVisibleLogin">
+    Kullanıcı adı veya e-posta ile kayıtlı kullanıcı bulunamadı. Lütfen tekrar deneyiniz.
+  </div>
