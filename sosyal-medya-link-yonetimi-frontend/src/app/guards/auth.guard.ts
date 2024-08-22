@@ -9,7 +9,6 @@ export class AuthGuard implements CanActivate {
   constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   canActivate(): boolean {
-    // Tarayıcı ortamı olup olmadığını kontrol edin
     if (isPlatformBrowser(this.platformId)) {
       if (localStorage.getItem('userId')) {
         return true;
@@ -19,7 +18,6 @@ export class AuthGuard implements CanActivate {
       }
     }
     
-    // Eğer sunucu ortamıysa, false döndürebilirsiniz ya da uygun bir default davranış tanımlayabilirsiniz.
     return false;
   }
 }

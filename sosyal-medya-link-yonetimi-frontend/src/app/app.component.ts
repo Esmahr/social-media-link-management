@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
         history = JSON.parse(localStorage.getItem('visitHistory') || '[]');
       } catch (e) {
         console.error('Error parsing visitHistory from localStorage:', e);
-        history = []; // Hata durumunda boş dizi olarak ayarla
+        history = [];
       }
 
       // Eski string URL'leri obje formatına dönüştür
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
       // Yeni objeyi başa ekle
       history.unshift({ url: url, timestamp: new Date().toISOString() });
 
-      // Tarihçe uzunluğu sınırını kontrol et ve gerekirse son elemanları çıkar
+      // Tarih uzunluğu sınırını kontrol et
       if (history.length > maxHistoryLength) {
         history = history.slice(0, maxHistoryLength);
       }
