@@ -98,7 +98,7 @@ Bu proje kullanıcıların sosyal medya linklerini ve bu linklerle ilgili bilgil
 * [x] Restful API tasarım kurallarına dikkat edilmeli (5p)
 * [x] Veri nesneleri için model ve interfaceleri tanımlayın (10p)
 * [x] Oluşturduğunuz API’leri bir postman collection olarak projeye ekleyin (5p)
-* [ ] Karmaşık kod bloklarınız için yorumları unutmayın (5p)
+* [x] Karmaşık kod bloklarınız için yorumları unutmayın (5p)
 * [x] Kolayca çalıştırabilmemiz için readme dosyasında gerekli yönergeleri bulundurun (5p)
 * [x] (Bonus) Kullanıcının ziyaret ettiği sayfaları kullanıcının lokalinde saklayın ve son gezdiklerim listesi oluşturup ekranın bir köşesinde gösterin (10p)
 
