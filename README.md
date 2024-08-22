@@ -5,8 +5,6 @@
 
 Bu proje kullanıcıların sosyal medya linklerini ve bu linklerle ilgili bilgileri daha etkili bir şekilde düzenlemelerini ve yönetmelerini kolaylaştırmayı amaçlıyor.
 
-#### Proje Yapısı
-
 ---
 
 <details>
