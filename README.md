@@ -102,6 +102,6 @@ Bu proje kullanıcıların sosyal medya linklerini ve bu linklerle ilgili bilgil
 * [x] Kolayca çalıştırabilmemiz için readme dosyasında gerekli yönergeleri bulundurun (5p)
 * [x] (Bonus) Kullanıcının ziyaret ettiği sayfaları kullanıcının lokalinde saklayın ve son gezdiklerim listesi oluşturup ekranın bir köşesinde gösterin (10p)
 
-Toplam puan: :smirk: 100 
+Toplam puan: :smirk: 110 
 
 </details>
