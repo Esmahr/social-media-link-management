@@ -68,7 +68,7 @@ export class EditModalComponent implements OnInit, OnChanges {
   deleteSocialMedia(): void {
     if (this.id) {
       this.authService.deleteSocialMedia(this.id).subscribe(
-        () => {
+        (data) => {
           this.socialMediaDeleted.emit();
         }
       );
