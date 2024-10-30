@@ -86,24 +86,3 @@ Bu proje kullanıcıların sosyal medya linklerini ve bu linklerle ilgili bilgil
              <img src="./sosyal-medya-link-yonetimi-frontend/src/assets/readme/lastvisited.png" alt="alt yazı" width="320">
 
 </details>
-
----
-
-<details>
-<summary>Değerlendirme Kriterleri Tamamlanma Durumları</summary>
-
-* [x] Projeden ne anladığınızı ve hangi adımları izleyerek ilerlediğinizi bir doküman olarak yazıp proje içerisine ekleyiniz (15P)
-* [x] Angular'da kodları component ve service’lere bölün (15P)
-* [x] Tasarımı responsive olarak kodlayın (10p)
-* [x] API NodeJS ve express kullanarak oluşturulmalı (20P)
-* [x] Verileri bir veritabanında (MongoDB, MySQL,…) kalıcı olarak saklayın (10p)
-* [x] Restful API tasarım kurallarına dikkat edilmeli (5p)
-* [x] Veri nesneleri için model ve interfaceleri tanımlayın (10p)
-* [x] Oluşturduğunuz API’leri bir postman collection olarak projeye ekleyin (5p)
-* [x] Karmaşık kod bloklarınız için yorumları unutmayın (5p)
-* [x] Kolayca çalıştırabilmemiz için readme dosyasında gerekli yönergeleri bulundurun (5p)
-* [x] (Bonus) Kullanıcının ziyaret ettiği sayfaları kullanıcının lokalinde saklayın ve son gezdiklerim listesi oluşturup ekranın bir köşesinde gösterin (10p)
-
-Toplam puan: :smirk: 110 
-
-</details>
